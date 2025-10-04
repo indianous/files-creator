@@ -3,8 +3,9 @@ import { join } from "node:path";
 
 function makeDirectory(folderPath: string) {
   mkdir(folderPath, { recursive: true }, (err) => {
-    console.log(err);
+    if (err) console.log(err);
   });
+  console.log(`Create folder : ${folderPath}`);
 }
 
 function filesCreator(
